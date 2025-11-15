@@ -1,6 +1,6 @@
-# Teste Front-End Angular — Select & Switch
+# UI Front-End Angular — Select & Switch
 
-Projeto de teste contendo dois componentes customizados:
+Projeto contendo dois componentes customizados:
 - `app-select` — componente tipo select custom (compatível com `[(ngModel)]` e `FormControl`)
 - `app-switch` — toggle/switch (compatível com `[(ngModel)]` e `FormControl`)
 
