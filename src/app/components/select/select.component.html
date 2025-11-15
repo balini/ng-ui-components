@@ -1,0 +1,21 @@
+<div class="app-select" [class.disabled]="disabled" tabindex="0" role="combobox"
+     aria-expanded="{{ isOpen }}" aria-haspopup="listbox" (blur)="onTouched()">
+  <div class="select-control" (click)="toggle()" [attr.aria-disabled]="disabled">
+    <span class="select-value">{{ selectedLabel }}</span>
+    <span class="select-icon" aria-hidden="true">▾</span>
+  </div>
+
+  <ul *ngIf="isOpen && options?.length" class="select-list" role="listbox">
+    <li *ngFor="let opt of options; let i = index"
+        role="option"
+        [attr.aria-selected]="opt.value === value"
+        [class.focused]="i === focusedIndex"
+        (click)="selectOption(opt)">
+      {{ opt.label }}
+    </li>
+  </ul>
+
+  <div *ngIf="isOpen && (!options || options.length === 0)" class="select-empty">
+    Sem opções
+  </div>
+</div>

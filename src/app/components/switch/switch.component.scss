@@ -1,0 +1,43 @@
+.app-switch {
+  display: inline-block;
+  padding: 4px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+
+  .track {
+    width: var(--switch-track-width);
+    height: var(--switch-track-height);
+    display: inline-flex;
+    align-items: center;
+    border-radius: var(--switch-radius);
+    background: #e5e7eb;
+    position: relative;
+    transition: background 0.18s ease;
+    padding: 2px;
+  }
+
+  .track.checked {
+    background: var(--color-primary);
+  }
+
+  .knob {
+    width: var(--switch-knob-size);
+    height: var(--switch-knob-size);
+    background: #fff;
+    border-radius: 50%;
+    display: block;
+    transform: translateX(0);
+    transition: transform 0.18s cubic-bezier(.2,.9,.2,1);
+    box-shadow: 0 2px 6px rgba(2,6,23,0.12);
+  }
+
+  .track.checked .knob {
+    transform: translateX(calc(var(--switch-track-width) - var(--switch-knob-size) - 4px));
+  }
+}

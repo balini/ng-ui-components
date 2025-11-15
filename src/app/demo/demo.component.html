@@ -1,0 +1,44 @@
+<div class="section">
+  <label>Select ([(ngModel)])</label>
+  <app-select
+    [options]="options"
+    [(ngModel)]="selected"
+    [placeholder]="placeholder"
+    [disabled]="selectDisabled"
+    (selectionChange)="console.log('selected', $event)"
+  ></app-select>
+
+  <div style="margin-top:12px;">
+    <label>Selected value:</label>
+    <div><strong>{{ selected || '—' }}</strong></div>
+    <button style="margin-top:8px;" (click)="addOption()">Adicionar opção</button>
+    <button style="margin-left:8px" (click)="removeLast()">Remover última</button>
+    <label style="display:block;margin-top:8px;">
+      <input type="checkbox" [(ngModel)]="selectDisabled" /> Desabilitar select
+    </label>
+  </div>
+</div>
+
+<div class="section">
+  <label>Switch ([(ngModel)])</label>
+  <app-switch [(ngModel)]="switchValue" [disabled]="switchDisabled" (change)="onSwitchChange($event)"></app-switch>
+  <div style="margin-top:8px;">
+    <div>Valor: <strong>{{ switchValue }}</strong></div>
+    <label style="display:block;margin-top:8px;">
+      <input type="checkbox" [(ngModel)]="switchDisabled" /> Desabilitar switch
+    </label>
+  </div>
+
+  <div style="margin-top:12px;">
+    <label>Últimos eventos</label>
+    <ul>
+      <li *ngFor="let l of switchLog">{{ l }}</li>
+    </ul>
+  </div>
+</div>
+
+<div class="section">
+  <label>Exemplo: Select com Reactive Forms</label>
+  <app-select [options]="options" [placeholder]="placeholder" [disabled]="selectDisabled" [ngModel]="selectControl.value" (selectionChange)="selectControl.setValue($event)"></app-select>
+  <div style="margin-top:8px;">Reactive value: <strong>{{ selectControl.value }}</strong></div>
+</div>

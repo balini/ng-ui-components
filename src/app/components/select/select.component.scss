@@ -1,0 +1,78 @@
+.app-select {
+  display: inline-block;
+  min-width: 240px;
+  position: relative;
+  font-size: 14px;
+  user-select: none;
+
+  &.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    pointer-events: auto;
+  }
+
+  .select-control {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: var(--select-min-height);
+    padding: 8px var(--select-padding-x);
+    border-radius: var(--select-radius);
+    border: 1px solid var(--color-border);
+    background: #fff;
+    cursor: pointer;
+  }
+
+  .select-value {
+    color: var(--color-text);
+  }
+
+  .select-icon {
+    margin-left: 8px;
+    color: var(--color-muted);
+    font-size: 12px;
+  }
+
+  .select-list {
+    position: absolute;
+    z-index: 10;
+    margin: 6px 0 0 0;
+    padding: 4px 0;
+    list-style: none;
+    background: #fff;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08);
+    max-height: 260px;
+    overflow: auto;
+    width: 100%;
+
+    li {
+      padding: 10px 12px;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    li:hover,
+    li.focused {
+      background: var(--color-primary-100);
+      color: var(--color-text);
+    }
+
+    li[aria-selected="true"] {
+      font-weight: 600;
+    }
+  }
+
+  .select-empty {
+    position: absolute;
+    z-index: 10;
+    margin: 6px 0 0 0;
+    padding: 12px;
+    background: #fff;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    width: 100%;
+    color: var(--color-muted);
+  }
+}

@@ -1,0 +1,14 @@
+<button
+  class="app-switch"
+  role="switch"
+  type="button"
+  [attr.aria-checked]="value"
+  [attr.aria-label]="ariaLabel"
+  [disabled]="disabled"
+  (click)="toggle()"
+  (keydown)="onKeydown($event)"
+>
+  <span class="track" [class.checked]="value">
+    <span class="knob" [class.checked]="value"></span>
+  </span>
+</button>
