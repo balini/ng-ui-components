@@ -30,8 +30,3 @@ npm test
 npm run test:coverage
 ```
 
-## Notas
-- Os testes usam Jest + jest-preset-angular; `setup-jest.ts` já importa o setup necessário.
-- Se houver erro relacionado a CSS imports, `identity-obj-proxy` foi adicionada em devDependencies e mapeada no `jest.config.js`.
-- Ajuste versões conforme seu ambiente se necessário.
-
