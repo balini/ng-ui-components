@@ -1,3 +1,0 @@
-import 'jest';
-
-declare global {}

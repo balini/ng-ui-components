@@ -51,7 +51,7 @@ describe('SelectComponent', () => {
   });
 
   it('should select an option on click and emit selectionChange', () => {
-    const spy = jest.spyOn(component.selectionChange, 'emit');
+    const spy = spyOn(component.selectionChange, 'emit');
     hostEl.query(By.css('.select-control')).nativeElement.click();
     fixture.detectChanges();
 

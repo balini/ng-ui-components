@@ -96,11 +96,9 @@ export class SelectComponent implements ControlValueAccessor {
       if (event.key === 'ArrowDown') {
         event.preventDefault();
         this.focusedIndex = Math.min(this.focusedIndex + 1, this.options.length - 1);
-        this.scrollIntoViewIfNeeded();
       } else if (event.key === 'ArrowUp') {
         event.preventDefault();
         this.focusedIndex = Math.max(this.focusedIndex - 1, 0);
-        this.scrollIntoViewIfNeeded();
       } else if (event.key === 'Escape') {
         this.isOpen = false;
       } else if (event.key === 'Enter') {
@@ -109,16 +107,10 @@ export class SelectComponent implements ControlValueAccessor {
         if (opt) this.selectOption(opt);
       } else if (event.key === 'Home') {
         this.focusedIndex = 0;
-        this.scrollIntoViewIfNeeded();
       } else if (event.key === 'End') {
         this.focusedIndex = this.options.length - 1;
-        this.scrollIntoViewIfNeeded();
       }
     }
-  }
-
-  private scrollIntoViewIfNeeded() {
-    // optional: could query the list item and scroll into view
   }
 
   get selectedLabel() {

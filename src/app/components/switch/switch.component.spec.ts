@@ -33,7 +33,7 @@ describe('SwitchComponent', () => {
   });
 
   it('should toggle on click and emit change', () => {
-    const spy = jest.spyOn(component.change, 'emit');
+    const spy = spyOn(component.change, 'emit');
     const btn = hostEl.query(By.css('button')).nativeElement as HTMLButtonElement;
     btn.click();
     fixture.detectChanges();
@@ -68,7 +68,7 @@ describe('SwitchComponent', () => {
   });
 
   it('should call onChange when toggled (ControlValueAccessor integration)', () => {
-    const onChangeSpy = jest.fn();
+    const onChangeSpy = jasmine.createSpy('onChange');
     component.registerOnChange(onChangeSpy);
 
     component.toggle();

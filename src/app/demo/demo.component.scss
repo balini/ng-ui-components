@@ -1,1 +1,58 @@
-.section { margin-bottom: 18px; }
+.invalid {
+  border: 2px solid #e74c3c !important;
+  background-color: #fdecea;
+}
+
+.action-button {
+    margin-top: 8px;
+    border-radius: 20px;
+    background-color: #8e80a5;
+    color: whitesmoke;
+    padding: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+.action-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.demo-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  padding: 1rem;
+}
+
+.panel {
+  background: #fff;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+}
+
+.row {
+  display:flex;
+  align-items:center;
+  gap:0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.actions {
+  display:flex;
+  gap:0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.control-row {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin: .5rem 0 1rem 0;
+}
+
+.muted {
+  color: #666;
+  font-size: 0.9rem;
+}
