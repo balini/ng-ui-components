@@ -28,7 +28,7 @@ npm start
 npm test
 ```
 
-## 📦 Componentes
+## Componentes
 
 ### `app-select`
 Componente de select customizado que:
